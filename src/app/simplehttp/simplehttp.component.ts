@@ -12,6 +12,10 @@ import { Movie } from '../movie';
 export class SimplehttpComponent implements OnInit {
   public movies : Movie[];
 
+  onClick(e){
+    console.log(e.target.innerHTML);
+  }
+
   constructor(private service: GetmoviesService) { 
     service
       .getMovies()

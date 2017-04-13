@@ -9,16 +9,22 @@ import { AppComponent } from './app.component';
 import { SimplehttpComponent } from './simplehttp/simplehttp.component';
 
 import { HeaderComponent } from './header/header.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { MovieItemComponent } from './movie-item/movie-item.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { SearchPipe } from './search.pipe';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SimplehttpComponent,
-    
     HeaderComponent,
-    
-    
+    SearchbarComponent,
+    MovieItemComponent,
+    MovieDetailsComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="card search">
+    <h1 class="search-headline">Film Directory</h1>
+    <label class="search-label">search 
+        <span *ngIf="query" 
+            [innerHTML]="' for: ' +query"></span></label>
+    <input class="search-input" 
+    
+            [(ngModel)]="query" placeholder="type in search term here">
+
+</div>
+
+<ul class="filmlist cf" *ngIf="query">
+    <li class="filmlist-item cf" (click)="showMovie(item); query=''" *ngFor="let item of (movies | search: query)">
+        <app-movie-item class="content" [movie]=item></app-movie-item>
+        
+    </li>
+</ul>
+
+<app-movie-details *ngIf="currentMovie" [movie]="currentMovie"></app-movie-details>
+
