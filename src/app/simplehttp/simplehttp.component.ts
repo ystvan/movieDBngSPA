@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GetmoviesService } from '../getmovies.service';
-import { Movie } from '../movie';
+import { GetfilmstarsService } from '../getfilmstars.service';
+import { Filmstar } from '../filmstar';
 
 @Component({
   selector: 'app-simplehttp',
   templateUrl: './simplehttp.component.html',
   styleUrls: ['./simplehttp.component.css'],
-  providers: [GetmoviesService]
+  providers: [GetfilmstarsService]
 })
 export class SimplehttpComponent implements OnInit {
-  public movies : Movie[];
+  public filmstars : Filmstar[];
 
   onClick(e){
     console.log(e.target.innerHTML);
   }
 
-  constructor(private service: GetmoviesService) { 
+  constructor(private service: GetfilmstarsService) { 
     service
-      .getMovies()
-      .subscribe(response => this.movies = response);
+      .getfilmstars()
+      .subscribe(response => this.filmstars = response);
   }
 
   ngOnInit() {
-    this.movies
+    this.filmstars
   }
 
 }

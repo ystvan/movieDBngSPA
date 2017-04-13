@@ -1,24 +1,19 @@
-<table class='table table-sm table-hover' *ngIf='movies'>
+<table class='table table-sm table-hover' *ngIf='filmstars'>
     <thead>
         <tr class="alert-info">
-            <th>Poster</th>
-            <th>ID</th>
-            <th>Original Title</th>
-            <th>Plot</th>
-            <th>Release Date</th>
-            <th>Average</th>  
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Popularity</th>
+            
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let movie of movies' class="table-active" (click)="onClick($event)">
+        <tr *ngFor='let filmstar of filmstars' class="table-active" (click)="onClick($event)">
              <td>
-                <img src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}">
+                <img src="http://image.tmdb.org/t/p/w185{{filmstar.profile_path}}">
             </td>
-            <td>{{movie.id}}</td>
-            <td>{{movie.original_title}}</td>
-            <td>{{movie.overview}}</td>
-            <td>{{movie.release_date}}</td>
-            <td>{{movie.vote_average}}</td>
+            <td>{{filmstar.name}}</td>
+            <td>{{filmstar.popularity}}</td>
         </tr>
     </tbody>
 </table>
