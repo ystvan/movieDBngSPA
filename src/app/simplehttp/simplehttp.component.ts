@@ -15,10 +15,11 @@ export class SimplehttpComponent implements OnInit {
   constructor(private service: GetmoviesService) { 
     service
       .getMovies()
-      .subscribe(response => this.movies = response.json().results);
+      .subscribe(response => this.movies = response);
   }
 
   ngOnInit() {
+    this.movies
   }
 
 }

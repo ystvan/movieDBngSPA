@@ -1,3 +1,22 @@
-<p>
-  simplehttp works!
-</p>
+<table class='table table-sm table-hover' *ngIf='movies'>
+    <thead>
+        <tr class="alert-info">
+            <th>ID</th>
+            <th>Original Title</th>
+            <th>Plot</th>
+            <th>Poster</th>
+            <th>Release Date</th>
+            <th>Average</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let movie of movies' class="table-active">
+            <td>{{movie.id}}</td>
+            <td>{{movie.original_title}}</td>
+            <td>{{movie.overview}}</td>
+            <td>{{movie.poster_path}}</td>
+            <td>{{movie.release_date}}</td>
+            <td>{{movie.vote_average}}</td>
+        </tr>
+    </tbody>
+</table>
